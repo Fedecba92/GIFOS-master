@@ -1,4 +1,20 @@
 let arrayDescarga = [];
+const getRenderedImage = () => {
+    let cards = document.querySelector('#resultados_busqueda')
+    let imagenesBuscadas = []
+    for (let i = 0; i < cards.childElementCount; i++) {
+        imagenesBuscadas.push(
+
+            {
+                title: cards.children[i].children[0].getAttribute('data-title'),
+                src: cards.children[i].children[0].getAttribute('src')
+
+            })
+    }
+    return imagenesBuscadas
+}
+let l = 0;
+let localStorageGifsArray = [];
 const arrowLeft = document.querySelector("#left_arrow_id");
 const arrowRigth = document.querySelector("#rigth_arrow_id");
 const slick = document.getElementsByClassName("contenedor_gifos_hover");
@@ -10,11 +26,11 @@ let containerModal = document.querySelector("#myModal");
 let modalImg = document.querySelector("#img01");
 let x = document.querySelector(".close");
 let optionsText = document.querySelector("#options");
-let l = 0;
-let localStorageGifsArray = [];
+
 const TREND='Trendings'
 const FAV='Favoritos'
 const GIFFO='Giffos'
+const SEARCH='Searched'
 const CreateCard = (cardData, classImagen = null, ContenedorPadre, callback,Criterio) => {
     let images = document.createElement('img');
     images.setAttribute('src', cardData.url);
@@ -99,6 +115,9 @@ const getCriterio=(nombre)=>{
              
         case GIFFO:
              return JSON.parse(localStorage.getItem("misGifos"))
+
+        case SEARCH:
+            return getRenderedImage()
                 break;
     
         default:

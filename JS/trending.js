@@ -1,18 +1,5 @@
 
-const getRenderedImage = () => {
-    let cards = document.querySelector('#resultados_busqueda')
-    let imagenesBuscadas = []
-    for (let i = 0; i < cards.childElementCount; i++) {
-        imagenesBuscadas.push(
 
-            {
-                title: cards.children[i].children[0].getAttribute('data-title'),
-                src: cards.children[i].children[0].getAttribute('src')
-
-            })
-    }
-    return imagenesBuscadas
-}
 const loadTrendings = async () => {
     try {
         let requestOptions = {

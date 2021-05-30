@@ -330,14 +330,14 @@
                 justify-content: space-between;
         width: 100%; }
         .seccion3 .list_gifos .contenedor_carrusel .contenedor_gifos_hover {
-          width: 243px;
-          height: 187px;
+          width: 200px;
+          height: 150px;
           position: relative;
           -webkit-box-sizing: border-box;
                   box-sizing: border-box; }
           .seccion3 .list_gifos .contenedor_carrusel .contenedor_gifos_hover .trending {
-            width: 243px;
-            height: 187px;
+            width: 200px;
+            height: 150px;
             -ms-flex-item-align: center;
                 align-self: center; }
       .seccion3 .list_gifos .rigth_arrow {

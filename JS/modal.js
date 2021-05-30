@@ -30,8 +30,8 @@ const DowloadModalImg=(e)=>{
 }
 
 const ModalFavoritos=(e,criterioDescargas)=>{
-    let target = ''
-    target =e.target.parentElement.parentElement.parentElement.children[1]
+   
+    let target =e.target.parentElement.parentElement.parentElement.children[1]
     let localStorageGifs = localStorage.getItem('favoritos');
     let Auxiliar=[]
     localStorageGifs?JSON.parse(localStorageGifs).map(e=>Auxiliar.push(e)):[]
