@@ -133,12 +133,17 @@
 		}
 	}
 	#repeatShot {
+		display: none;
+		justify-content: flex-end;
+		position: relative;
+		right: 25%;
+		bottom:50px;
 		color: #572ee5;
 		text-decoration: none;
-
-		&:hover {
-			border-bottom: 2px solid #50e3c2;
-		}
+		font-size: 1.2em;
+        letter-spacing: 0;
+		cursor: pointer;
+        
 
 		&:active {
 			color: #9cafc3;

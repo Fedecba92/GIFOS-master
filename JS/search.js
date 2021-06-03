@@ -5,6 +5,11 @@ const search = document.querySelector('#icon_buscador');
 const containerList = document.querySelector('#match_list');
 let searchResults = document.querySelector('#resultados_busqueda');
 let seccion2 = document.querySelector('.seccion2');
+//--endpoint de los tranding tags
+const trendingTagsEndpoint = 'https://api.giphy.com/v1/trending/searches';
+const apiKey = 'wUIs2kykDiUjqc9ljNRoH97ddpN05IwD';
+const $trendingTagList = document.querySelector('.trendingTag_list');
+////
 
 const getSearchTags = async (word) => {
     try {
@@ -46,10 +51,11 @@ const autocomplete = async (ev) => {
 }
 
 //getting input for search
-const searchContent = async () => {
+const searchContent = async (search) => {
+    // searchInput.value=search
     const gifosSearch = await getGifosSearch(Paginacion, searchInput?.value);
+    
     fetchSearch(gifosSearch)
-
 }
 
 const viewMore = async () => {
@@ -59,6 +65,7 @@ const viewMore = async () => {
 }// general search function
 
 const fetchSearch = (arr, flagViemore = false) => {
+    console.log('entre aca');
 
     let h2SearchResults = document.querySelector('#titulo_busqueda');
     if (arr.data.length === 0) {
@@ -75,6 +82,7 @@ const fetchSearch = (arr, flagViemore = false) => {
         noResultsSuggestion.innerText = 'Intenta con otra búsqueda';
 
         searchResults.append(noResultsTitle, noResultsImg, noResultsSuggestion);
+        
 
     } else {
 
@@ -89,7 +97,7 @@ const fetchSearch = (arr, flagViemore = false) => {
                 
                    
                     url:dato.images.fixed_height_small.url,
-                    username:dato.title,
+                    username:dato.username,
                     title:dato.title
                 
             }
@@ -112,6 +120,41 @@ const fetchSearch = (arr, flagViemore = false) => {
         })
     }
 }
+
+//Trending TAGS
+
+const getTrendingTags = async () => {
+	await fetch(`${trendingTagsEndpoint}?api_key=${apiKey}`)
+		.then((response) => response.json())
+		.then((trendingTags) => {
+			console.log(trendingTags);
+			displayTrendingTags(trendingTags);
+		})
+		.catch((err) => console.log(err));
+};
+
+getTrendingTags();
+
+const displayTrendingTags = (trendingTags) => {
+	for (let i = 0; i < 6; i++) {
+		const trendingTagItem = document.createElement('span');
+		trendingTagItem.classList.add('trending__item');
+        
+		// trendingTagItem.setAttribute(
+		// 	'onclick',
+		// 	`searchContent(${trendingTags.data[i]})`
+		// );
+        // trendingTagItem.addEventListener('click',searchContent(trendingTags.data[i]))
+        trendingTagItem.onclick= ()=>searchContent(trendingTags.data[i])
+        
+        
+		trendingTagItem.innerHTML = `${trendingTags.data[i]}`;
+		$trendingTagList.appendChild(trendingTagItem);
+	}
+    
+};
+
+
 
 searchInput?.addEventListener('keyup', autocomplete);
 

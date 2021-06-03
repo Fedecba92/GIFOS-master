@@ -78,8 +78,13 @@
         
     }
 
-    .corazon{
+    .guardar_favorito_corazon{
         padding-right: 10px;
+        cursor: pointer;
+
+        &:active{
+            background-color: rgba(128, 128, 128, 0.664);
+        }
     }
     .borde_boton_descarga{
         width: 36px;
@@ -87,6 +92,10 @@
         opacity: 0.5;
         border: 1px solid #9CAFC3;
         border-radius: 6px;
+
+        &:active{
+            background-color: rgba(128, 128, 128, 0.664);
+        }
     }
 }
 
@@ -180,8 +189,13 @@
         
     }
 
-    .corazon{
+    .guardar_favorito_corazon{
         padding-right: 10px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgba(128, 128, 128, 0.664);
+        }
     }
 
     .borde_boton_descarga{
@@ -191,6 +205,11 @@
         border: 1px solid #9CAFC3;
         border-radius: 6px;
         margin-right: 80px;
+        cursor: pointer;
+
+        &:hover{
+            background-color: rgba(128, 128, 128, 0.664);
+        }
     }
 }
 

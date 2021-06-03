@@ -2,6 +2,8 @@ const comenzar = document.querySelector("#button--comenzar");
 const grabar = document.querySelector('#button--grabar');
 const finalizar = document.querySelector('#button--finalizar');
 const subir = document.querySelector('#button--subirGifo');
+const repetir = document.querySelector('#repeatShot');
+let recording = false;
 
 const uploadEndpoint = 'http://upload.giphy.com/v1/gifs?api_key=wUIs2kykDiUjqc9ljNRoH97ddpN05IwD'
 
@@ -24,6 +26,7 @@ subir.addEventListener('click', function (ev) {
      }
    );
    localStorage.setItem('misGifos',JSON.stringify(misGifos));
+   
 })
 
 async function uploadGif(formData) {
@@ -40,6 +43,9 @@ const startVideo = () => {
    containerVideo.innerHTML = "<video>";
    comenzar.style.display = "none";
    grabar.style.display = "block"
+   document.querySelector('#step-1').style.background = '#572EE5';
+    document.querySelector('#step-1').style.color = '#FFFFFF';
+    
 }
 
 function stopStreamedVideo(videoElem) {
@@ -79,8 +85,15 @@ function getStreamAndRecord() {
       });
 
       grabar.addEventListener('click', function () {
+         alert('¿Nos das acceso a tu cámara? - El acceso a tu camara será válido sólo por el tiempo en el que estés creando el GIFO');
          grabar.style.display = "none";
          finalizar.style.display = "block";
+         document.querySelector('#step-1').style.background = '#FFFFFF';
+        document.querySelector('#step-1').style.color = '#572EE5';
+        document.querySelector('#step-2').style.background = '#572EE5';
+        document.querySelector('#step-2').style.color = '#FFFFFF';
+        recording = true;
+        timeRecord();
          recorder.startRecording()
       })
       finalizar.addEventListener("click", function stopRecording() {
@@ -92,6 +105,13 @@ function getStreamAndRecord() {
             finalizar.style.display = "none";
             const { data:gifData } =  await uploadGif(form);
             subir.style.display = "block";
+            repetir.style.display = "flex";
+            repetir.innerHTML = "REPETIR CAPTURA";
+            document.querySelector('#step-2').style.background = '#FFFFFF';
+            document.querySelector('#step-2').style.color = '#572EE5';
+            document.querySelector('#step-3').style.background = '#572EE5';
+            document.querySelector('#step-3').style.color = '#FFFFFF';
+            recording = false;
             mostrarPreview(gifData);
             stopStreamedVideo(video)
             
@@ -101,5 +121,32 @@ function getStreamAndRecord() {
 
 }
 
+function timeRecord() {
+   let seconds = 0;
+   let minute = 0;
+   let timer = setInterval(() => {
+       if (recording === true) {
+           if (seconds < 60) {
+               if (seconds <= 9) {
+                   seconds = '0' + seconds;
+               }
+               repetir.style.display = "flex";
+               repetir.innerHTML = `00:00:0${minute}:${seconds}`;
+               seconds++;
+           } else {
+               minute++;
+               seconds = 0;
+           }
+       }
+       else {
+           clearInterval(timer)
+       }
+   }, 1000);
+}
+
 
 comenzar.addEventListener('click', getStreamAndRecord)
+repetir.addEventListener('click', (ev) => {
+   location.reload();
+   startVideo();
+});
