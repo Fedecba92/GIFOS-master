@@ -8,6 +8,7 @@ let recording = false;
 const uploadEndpoint =
   "http://upload.giphy.com/v1/gifs?api_key=wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
 
+//show recorded gif
 function mostrarPreview({ id }) {
   const containerVideo = document.querySelector(
     ".crearGif__recordingZone__content"
@@ -15,6 +16,7 @@ function mostrarPreview({ id }) {
   containerVideo.innerHTML = `<img class='preview' data-id='${id}'  src='https://i.giphy.com/${id}.gif' />`;
 }
 
+//upload gif
 subir.addEventListener("click", function (ev) {
   const actualPreviewId = document
     .querySelector(".preview")
@@ -29,6 +31,7 @@ subir.addEventListener("click", function (ev) {
   localStorage.setItem("misGifos", JSON.stringify(misGifos));
 });
 
+// fetch upload endpoint
 async function uploadGif(formData) {
   const response = await fetch(uploadEndpoint, {
     method: "POST",
@@ -37,6 +40,7 @@ async function uploadGif(formData) {
 
   return response.json();
 }
+
 const startVideo = () => {
   const containerVideo = document.querySelector(
     ".crearGif__recordingZone__content"

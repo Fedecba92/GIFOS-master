@@ -5,12 +5,13 @@ const search = document.querySelector("#icon_buscador");
 const containerList = document.querySelector("#match_list");
 let searchResults = document.querySelector("#resultados_busqueda");
 let seccion2 = document.querySelector(".seccion2");
-//--endpoint de los tranding tags
+//--endpoint de los trending tags
 const trendingTagsEndpoint = "https://api.giphy.com/v1/trending/searches";
 const apiKey = "wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
 const $trendingTagList = document.querySelector(".trendingTag_list");
 ////
 
+// fetch autocomplete sugestions
 const getSearchTags = async (word) => {
   try {
     const suggestions = await fetch(
@@ -22,6 +23,7 @@ const getSearchTags = async (word) => {
   }
 };
 
+// fetch searched gifs
 const getGifosSearch = async (Paginacion, query) => {
   try {
     const imagenes = await fetch(
@@ -68,8 +70,9 @@ const viewMore = async () => {
   Paginacion += 12;
   const gifosSearch = await getGifosSearch(Paginacion, searchInput.value);
   fetchSearch(gifosSearch, true);
-}; // general search function
+};
 
+// general search function
 const fetchSearch = (arr, flagViemore = false) => {
   console.log("entre aca");
 
@@ -154,12 +157,6 @@ const displayTrendingTags = (trendingTags) => {
   for (let i = 0; i < 6; i++) {
     const trendingTagItem = document.createElement("span");
     trendingTagItem.classList.add("trending__item");
-
-    // trendingTagItem.setAttribute(
-    // 	'onclick',
-    // 	`searchContent(${trendingTags.data[i]})`
-    // );
-    // trendingTagItem.addEventListener('click',searchContent(trendingTags.data[i]))
     trendingTagItem.onclick = () => searchContent(trendingTags.data[i]);
 
     trendingTagItem.innerHTML = `${trendingTags.data[i]}`;
