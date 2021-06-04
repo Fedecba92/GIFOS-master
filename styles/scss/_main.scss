@@ -82,6 +82,7 @@
         color: #9cafc3;
         font-family: "Roboto", sans-serif;
         margin-left: 23px;
+        padding: 3px;
       }
     }
   }
@@ -131,7 +132,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 15px 20px;
+      row-gap: 20px;
       grid-template-areas:
         ". ."
         ". ."
@@ -139,6 +140,14 @@
         ". ."
         ". ."
         ". .";
+
+      h2 {
+        text-align: center;
+        margin: 43px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 25px;
+        color: #572ee5;
+      }
 
       .contenedor_gifos_hover {
         width: 156px;
@@ -159,12 +168,12 @@
         size: 25px;
         position: relative;
         left: 30%;
-        bottom: 25%;
+        top: 40%;
       }
       .noResultsImg {
         position: relative;
         right: 100%;
-        top: 5%;
+        top: 55%;
       }
     }
     .mouse_over_tarjeta2 {
@@ -228,16 +237,17 @@
         width: 100%;
 
         .contenedor_gifos_hover {
-          width: 200px;
-          height: 150px;
+          width: 243px;
+          height: 187px;
           position: relative;
           box-sizing: border-box;
 
           .trending {
-            width: 200px;
-            height: 150px;
+            width: 243px;
+            height: 187px;
             align-self: center;
-            // padding-right: 20px;
+            justify-self: center;
+            padding-right: 20px;
           }
         }
       }
@@ -253,6 +263,7 @@
       visibility: hidden;
       width: 0;
       height: 0;
+      display: none;
     }
   }
 
@@ -346,6 +357,7 @@
         color: #9cafc3;
         font-family: "Roboto", sans-serif;
         margin-left: 23px;
+        padding: 8px;
       }
     }
   }
@@ -406,20 +418,35 @@
       align-items: center;
       justify-content: center;
       width: 90%;
-
+      .noResultsTitle {
+        text-align: center;
+        margin: 43px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 25px;
+        color: #572ee5;
+        place-self: center;
+        grid-column: 2 / span 2;
+      }
       h3 {
         height: 25px;
         width: 300px;
         color: #50e3c2;
         size: 25px;
-        position: relative;
-        right: 5%;
-        top: 80%;
+        grid-column: 2 / span 2;
+        grid-row: 3 / span 2;
+        place-self: center;
+        text-align: center;
+        // position: relative;
+        // right: 5%;
+        // top: 80%;
       }
       .noResultsImg {
-        position: relative;
-        left: 100%;
-        top: 5%;
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 1;
+        place-self: center;
+        // position: relative;
+        // left: 100%;
+        // top: 5%;
       }
       .searchImg {
         height: 200px;

@@ -8,7 +8,7 @@
   .blueline {
     width: 100%;
     height: 5px;
-    background: #572EE5; }
+    background: #572ee5; }
 
   header {
     margin: 15px 22px 17px 22px;
@@ -37,7 +37,7 @@
     header .navbar span {
       width: 15px;
       height: 2px;
-      background-color: #572EE5;
+      background-color: #572ee5;
       display: block;
       margin-top: 4px; }
     header .navbar .hamburguer_menu > ul {
@@ -67,16 +67,16 @@
       display: none; }
     header .navbar a {
       text-decoration: none;
-      color: #FFFFFF;
-      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
       font-weight: bold; }
     header .navbar #dark_mode {
-      color: #FFFFFF;
-      font-family: 'Montserrat', sans-serif;
+      color: #ffffff;
+      font-family: "Montserrat", sans-serif;
       font-weight: bold; }
     header .navbar .linea {
       opacity: 0.5;
-      border: 1px solid #FFFFFF;
+      border: 1px solid #ffffff;
       width: 41px;
       display: block;
       margin: 11px auto 13.9px auto; } }
@@ -84,7 +84,7 @@
   .blueline {
     width: 100%;
     height: 5px;
-    background: #572EE5; }
+    background: #572ee5; }
 
   header {
     display: -webkit-box;
@@ -108,15 +108,17 @@
     header li {
       list-style: none;
       padding-right: 50px; }
+    header .hoverLine:hover {
+      border-bottom: 0.2em solid #5ed7c6; }
     header a {
       text-decoration: none;
       font-size: 18px;
-      color: #572EE5;
-      font-family: 'Montserrat', sans-serif;
+      color: #572ee5;
+      font-family: "Montserrat", sans-serif;
       font-weight: bold; }
     header #dark_mode {
-      color: #572EE5;
-      font-family: 'Montserrat', sans-serif;
+      color: #572ee5;
+      font-family: "Montserrat", sans-serif;
       font-weight: bold;
       cursor: pointer; }
     header .hamburguer_menu {
@@ -211,7 +213,8 @@
         list-style: none;
         color: #9cafc3;
         font-family: "Roboto", sans-serif;
-        margin-left: 23px; }
+        margin-left: 23px;
+        padding: 3px; }
 
   .seccion2 {
     display: -webkit-box;
@@ -256,8 +259,14 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-      gap: 15px 20px;
+      row-gap: 20px;
       grid-template-areas: ". ." ". ." ". ." ". ." ". ." ". ."; }
+      .seccion2 #resultados_busqueda h2 {
+        text-align: center;
+        margin: 43px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 25px;
+        color: #572ee5; }
       .seccion2 #resultados_busqueda .contenedor_gifos_hover {
         width: 156px;
         height: 120px; }
@@ -273,11 +282,11 @@
         size: 25px;
         position: relative;
         left: 30%;
-        bottom: 25%; }
+        top: 40%; }
       .seccion2 #resultados_busqueda .noResultsImg {
         position: relative;
         right: 100%;
-        top: 5%; }
+        top: 55%; }
     .seccion2 .mouse_over_tarjeta2 {
       display: none; }
     .seccion2 .boton_ver_mas {
@@ -350,16 +359,18 @@
                 justify-content: space-between;
         width: 100%; }
         .seccion3 .list_gifos .contenedor_carrusel .contenedor_gifos_hover {
-          width: 200px;
-          height: 150px;
+          width: 243px;
+          height: 187px;
           position: relative;
           -webkit-box-sizing: border-box;
                   box-sizing: border-box; }
           .seccion3 .list_gifos .contenedor_carrusel .contenedor_gifos_hover .trending {
-            width: 200px;
-            height: 150px;
+            width: 243px;
+            height: 187px;
             -ms-flex-item-align: center;
-                align-self: center; }
+                align-self: center;
+            justify-self: center;
+            padding-right: 20px; }
       .seccion3 .list_gifos .rigth_arrow {
         display: none;
         -webkit-box-pack: center;
@@ -370,7 +381,8 @@
     .seccion3 .mouse_over_tarjeta2 {
       visibility: hidden;
       width: 0;
-      height: 0; }
+      height: 0;
+      display: none; }
 
   .linea_azul_footer {
     width: 100%;
@@ -458,7 +470,8 @@
         list-style: none;
         color: #9cafc3;
         font-family: "Roboto", sans-serif;
-        margin-left: 23px; }
+        margin-left: 23px;
+        padding: 8px; }
 
   .seccion2 {
     margin-top: 73px;
@@ -515,18 +528,27 @@
           -ms-flex-pack: center;
               justify-content: center;
       width: 90%; }
+      .seccion2 #resultados_busqueda .noResultsTitle {
+        text-align: center;
+        margin: 43px;
+        font-family: "Montserrat", sans-serif;
+        font-size: 25px;
+        color: #572ee5;
+        place-self: center;
+        grid-column: 2 / span 2; }
       .seccion2 #resultados_busqueda h3 {
         height: 25px;
         width: 300px;
         color: #50e3c2;
         size: 25px;
-        position: relative;
-        right: 5%;
-        top: 80%; }
+        grid-column: 2 / span 2;
+        grid-row: 3 / span 2;
+        place-self: center;
+        text-align: center; }
       .seccion2 #resultados_busqueda .noResultsImg {
-        position: relative;
-        left: 100%;
-        top: 5%; }
+        grid-column: 2 / span 2;
+        grid-row: 2 / span 1;
+        place-self: center; }
       .seccion2 #resultados_busqueda .searchImg {
         height: 200px;
         width: 260px; }
@@ -720,7 +742,7 @@
             align-items: center;
     padding-top: 47px; }
     .pie_de_pagina .compartir_en {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       font-size: 15px;
       color: #000000; }
     .pie_de_pagina .contenedor_social {
@@ -736,7 +758,7 @@
       .pie_de_pagina .contenedor_social .icon {
         padding: 22px 20px 46px 0px; }
     .pie_de_pagina .rights {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       font-size: 14px;
       color: #000000;
       line-height: 20px;
@@ -755,7 +777,7 @@
       display: -ms-flexbox;
       display: flex; }
       .pie_de_pagina .social .compartir_en {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         font-size: 13px;
         color: #000000;
         padding-right: 19px; }
@@ -766,90 +788,90 @@
         .pie_de_pagina .social .contenedor_social .icon {
           padding-right: 19px; }
     .pie_de_pagina .rights {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       font-size: 13px;
       color: #000000; } }
 @media screen and (max-width: 768px) {
   .mode_dark {
-    background-color: #37383C; }
+    background-color: #37383c; }
     .mode_dark .blueline {
       display: none; }
     .mode_dark header .navbar ul {
       background-color: #000000; }
     .mode_dark header .navbar span {
-      background-color: #FFFFFF; }
+      background-color: #ffffff; }
     .mode_dark header .navbar .circulo_cruz > ul {
       background: #000000; }
     .mode_dark header .navbar a {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark header .navbar #dark_mode {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark header .navbar .linea {
-      border: 1px solid #FFFFFF; }
+      border: 1px solid #ffffff; }
     .mode_dark .seccion1 h1 {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark .seccion1 .border_search #buscador {
-      background-color: #37383C;
-      color: #9CAFC3; }
+      background-color: #37383c;
+      color: #9cafc3; }
     .mode_dark .seccion2 h3 {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark .seccion2 p {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark .seccion3 {
       background: #222326; }
       .mode_dark .seccion3 h2 {
-        color: #FFFFFF; }
+        color: #ffffff; }
       .mode_dark .seccion3 P {
-        color: #FFFFFF; }
+        color: #ffffff; }
     .mode_dark footer #compartir_enid {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark footer i > img {
       padding: 22px 20px 46px 0px; }
     .mode_dark footer #rightsid {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       font-size: 14px;
-      color: #FFFFFF;
+      color: #ffffff;
       line-height: 20px;
       margin-bottom: 23px; }
     .mode_dark .linea_azul_footer {
       display: none; } }
 @media screen and (min-width: 1024px) {
   .mode_dark {
-    background-color: #37383C; }
+    background-color: #37383c; }
     .mode_dark .blueline {
       display: none; }
     .mode_dark header .navbar span {
-      background-color: #FFFFFF; }
+      background-color: #ffffff; }
     .mode_dark header .navbar .circulo_cruz > ul {
       background: #000000; }
     .mode_dark header .navbar a {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark header .navbar #dark_mode {
-      color: #FFFFFF;
+      color: #ffffff;
       cursor: pointer; }
     .mode_dark .seccion1 h1 {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark .seccion1 .border_search #buscador {
-      background-color: #37383C;
-      color: #9CAFC3; }
+      background-color: #37383c;
+      color: #9cafc3; }
     .mode_dark .seccion2 h3 {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark .seccion2 p {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark .seccion3 {
       background: #222326; }
       .mode_dark .seccion3 h2 {
-        color: #FFFFFF; }
+        color: #ffffff; }
       .mode_dark .seccion3 P {
-        color: #FFFFFF; }
+        color: #ffffff; }
     .mode_dark footer #compartir_enid {
-      color: #FFFFFF; }
+      color: #ffffff; }
     .mode_dark footer i > img {
       padding: 22px 20px 46px 0px; }
     .mode_dark footer #rightsid {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       font-size: 14px;
-      color: #FFFFFF;
+      color: #ffffff;
       line-height: 20px;
       margin-bottom: 23px; }
     .mode_dark .linea_azul_footer {
@@ -873,7 +895,7 @@
     /* Full height */
     overflow: auto;
     /* Enable scroll if needed */
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     /* Fallback color */
     background: rgba(255, 255, 255, 0.9);
     /* Black w/ opacity */ }
@@ -909,7 +931,7 @@
     position: absolute;
     top: 15px;
     right: 35px;
-    color: #572EE5;
+    color: #572ee5;
     font-size: 40px;
     font-weight: bold;
     -webkit-transition: 0.3s;
@@ -933,10 +955,10 @@
     margin-top: 14px; }
     #options .usuario h3 {
       font-size: 15px;
-      font-family: 'Roboto', sans-serif; }
+      font-family: "Roboto", sans-serif; }
     #options .usuario h2 {
       font-size: 10px;
-      font-family: 'Montserrat', sans-serif; }
+      font-family: "Montserrat", sans-serif; }
     #options .guardar_favorito_corazon {
       padding-right: 10px;
       cursor: pointer; }
@@ -946,7 +968,7 @@
       width: 36px;
       height: 36px;
       opacity: 0.5;
-      border: 1px solid #9CAFC3;
+      border: 1px solid #9cafc3;
       border-radius: 6px; }
       #options .borde_boton_descarga:active {
         background-color: rgba(128, 128, 128, 0.664); } }
@@ -969,7 +991,7 @@
     /* Full height */
     overflow: auto;
     /* Enable scroll if needed */
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     /* Fallback color */
     background: rgba(255, 255, 255, 0.9);
     /* Black w/ opacity */ }
@@ -1005,7 +1027,7 @@
     position: absolute;
     top: 0px;
     right: 229px;
-    color: #572EE5;
+    color: #572ee5;
     font-size: 40px;
     font-weight: bold;
     -webkit-transition: 0.3s;
@@ -1029,12 +1051,12 @@
     margin-top: 27px; }
     #options .usuario h3 {
       font-size: 15px;
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       margin-left: 80px;
       line-height: 40px; }
     #options .usuario h2 {
       font-size: 10px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       margin-left: 80px; }
     #options .guardar_favorito_corazon {
       padding-right: 10px;
@@ -1045,7 +1067,7 @@
       width: 36px;
       height: 36px;
       opacity: 0.5;
-      border: 1px solid #9CAFC3;
+      border: 1px solid #9cafc3;
       border-radius: 6px;
       margin-right: 80px;
       cursor: pointer; }
@@ -1064,17 +1086,17 @@
         -ms-flex-align: center;
             align-items: center; }
     .contenedor_favoritos h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-size: 20px;
-      color: #572EE5;
+      color: #572ee5;
       line-height: 30px;
       margin-top: 5px;
       margin-bottom: 46px; }
 
   .contenedor_favoritos2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 15px;
-    color: #50E3C2;
+    color: #50e3c2;
     text-align: center;
     line-height: 33px;
     margin: 55px 0px 109px 0px; }
@@ -1094,7 +1116,7 @@
       display: none; }
 
   .boton_ver_mas {
-    border: 1px solid #572EE5;
+    border: 1px solid #572ee5;
     width: 127px;
     height: 50px;
     border-radius: 25px;
@@ -1113,16 +1135,16 @@
       border: none;
       background: none;
       width: 80px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-weight: bold;
       font-size: 13px;
-      color: #572EE5;
+      color: #572ee5;
       text-transform: uppercase; }
 
   .contenedor_crear_gifo2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 22px;
-    color: #50E3C2;
+    color: #50e3c2;
     text-align: center;
     line-height: 33px;
     margin: 109px 0px 109px 0px; } }
@@ -1140,16 +1162,16 @@
             align-items: center;
     margin-top: -65px; }
     .contenedor_favoritos h2 {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-size: 25px;
-      color: #572EE5;
+      color: #572ee5;
       line-height: 30px;
       margin-bottom: 36px; }
 
   .contenedor_favoritos2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 22px;
-    color: #50E3C2;
+    color: #50e3c2;
     text-align: center;
     line-height: 33px;
     margin: 109px 0px 109px 0px; }
@@ -1169,7 +1191,7 @@
       width: 260px; }
 
   .boton_ver_mas {
-    border: 1px solid #572EE5;
+    border: 1px solid #572ee5;
     width: 127px;
     height: 50px;
     border-radius: 25px;
@@ -1188,16 +1210,16 @@
       border: none;
       background: none;
       width: 80px;
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-weight: bold;
       font-size: 13px;
-      color: #572EE5;
+      color: #572ee5;
       text-transform: uppercase; }
 
   .contenedor_crear_gifo2 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 22px;
-    color: #50E3C2;
+    color: #50e3c2;
     text-align: center;
     line-height: 33px;
     margin: 109px 0px 109px 0px; } }
@@ -1257,7 +1279,7 @@
     body.darkMode .crearGif__recordingZone {
       border: 1px solid #fff; }
   .crearGif__title {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: #572ee5; }
     .crearGif__title .aqua-text {
       color: #50e3c2; }
@@ -1362,7 +1384,7 @@
     top: 79%;
     right: 24%; }
     .crearGif .timer .timer__text {
-      font-family: 'Roboto', sans-serif;
+      font-family: "Roboto", sans-serif;
       font-size: 16px;
       line-height: 22px; }
   .crearGif .overlay__buttons {

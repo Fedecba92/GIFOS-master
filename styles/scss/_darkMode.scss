@@ -1,193 +1,166 @@
-@media screen and (max-width:768px){
-    .mode_dark{
-    
-            background-color:  #37383C;
-            .blueline{
-                display: none;
-             
-            }
+@media screen and (max-width: 768px) {
+  .mode_dark {
+    background-color: #37383c;
+    .blueline {
+      display: none;
+    }
 
-        header{
-            
-            .navbar{
-
-                ul{
-                    background-color: #000000;
-                }
-        
-                span{
-                    background-color: #FFFFFF;
-                }
-        
-                .circulo_cruz>ul{
-                    background: #000000;
-                }
-               
-                a{
-                    color: #FFFFFF;
-                }
-                #dark_mode{
-                    color: #FFFFFF;
-                }
-                 .linea{
-                     border: 1px solid #FFFFFF;
-                
-                 }
-            }
-        
+    header {
+      .navbar {
+        ul {
+          background-color: #000000;
         }
 
-        .seccion1{
-            
-            h1{
-                color: #FFFFFF;
-            }
+        span {
+          background-color: #ffffff;
+        }
 
-            .border_search{
-            
-                
-               
-                #buscador{
-                    background-color: #37383C;
-                    color: #9CAFC3;
-                }
-            
-            }
+        .circulo_cruz > ul {
+          background: #000000;
         }
-        .seccion2{
-            h3{
-                color: #FFFFFF;
-            }
-            p{
-                color: #FFFFFF;
-            }
-        }
-        .seccion3{
-            background: #222326;
-            
-            h2{
-                color: #FFFFFF;
-            }
-            P{
-                color: #FFFFFF;
-            }
-        }
-        footer{
-            
-            #compartir_enid{
 
-                color: #FFFFFF;        
-            }
-            i>img{
-                padding: 22px 20px 46px 0px;
-            }
-            #rightsid{
-                font-family: 'Roboto', sans-serif;
-                font-size: 14px;
-                color: #FFFFFF;
-                line-height: 20px;
-                margin-bottom: 23px;
-            }
-    
+        a {
+          color: #ffffff;
         }
-        .linea_azul_footer{
-           display: none;
+        #dark_mode {
+          color: #ffffff;
         }
-    }    
+        .linea {
+          border: 1px solid #ffffff;
+        }
+      }
+    }
+
+    .seccion1 {
+      h1 {
+        color: #ffffff;
+      }
+
+      .border_search {
+        #buscador {
+          background-color: #37383c;
+          color: #9cafc3;
+        }
+      }
+    }
+    .seccion2 {
+      h3 {
+        color: #ffffff;
+      }
+      p {
+        color: #ffffff;
+      }
+    }
+    .seccion3 {
+      background: #222326;
+
+      h2 {
+        color: #ffffff;
+      }
+      P {
+        color: #ffffff;
+      }
+    }
+    footer {
+      #compartir_enid {
+        color: #ffffff;
+      }
+      i > img {
+        padding: 22px 20px 46px 0px;
+      }
+      #rightsid {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 20px;
+        margin-bottom: 23px;
+      }
+    }
+    .linea_azul_footer {
+      display: none;
+    }
+  }
 }
 
-@media screen and (min-width:1024px){
-    .mode_dark{
-    
-        background-color:  #37383C;
-       
-        .blueline{
-            display: none;
-         
-        }
+@media screen and (min-width: 1024px) {
+  .mode_dark {
+    background-color: #37383c;
 
-    header{
-        
-        .navbar{
-    
-            span{
-                background-color: #FFFFFF;
-            }
-    
-            .circulo_cruz>ul{
-                background: #000000;
-            }
-           
-            a{
-                color: #FFFFFF;
-            }
-            #dark_mode{
-                color: #FFFFFF;
-                cursor: pointer;
-            }
-            // .linea{
-            //     border: 1px solid #FFFFFF;
-            
-            // }
-        }
-    
+    .blueline {
+      display: none;
     }
 
-    .seccion1{
-        
-        h1{
-            color: #FFFFFF;
+    header {
+      .navbar {
+        span {
+          background-color: #ffffff;
         }
 
-        .border_search{
-        
-            
-           
-            #buscador{
-                background-color: #37383C;
-                color: #9CAFC3;
-            }
-        
-        }
-    }
-    .seccion2{
-        h3{
-            color: #FFFFFF;
-        }
-        p{
-            color: #FFFFFF;
-        }
-    }
-    .seccion3{
-        background: #222326;
-        
-        h2{
-            color: #FFFFFF;
-        }
-        P{
-            color: #FFFFFF;
-        }
-    }
-    footer{
-        
-        #compartir_enid{
-
-            color: #FFFFFF;        
-        }
-        i>img{
-            padding: 22px 20px 46px 0px;
-        }
-        #rightsid{
-            font-family: 'Roboto', sans-serif;
-            font-size: 14px;
-            color: #FFFFFF;
-            line-height: 20px;
-            margin-bottom: 23px;
+        .circulo_cruz > ul {
+          background: #000000;
         }
 
+        a {
+          color: #ffffff;
+        }
+        #dark_mode {
+          color: #ffffff;
+          cursor: pointer;
+        }
+        // .linea{
+        //     border: 1px solid #FFFFFF;
+
+        // }
+      }
     }
-    .linea_azul_footer{
-       display: none;
+
+    .seccion1 {
+      h1 {
+        color: #ffffff;
+      }
+
+      .border_search {
+        #buscador {
+          background-color: #37383c;
+          color: #9cafc3;
+        }
+      }
     }
-}    
+    .seccion2 {
+      h3 {
+        color: #ffffff;
+      }
+      p {
+        color: #ffffff;
+      }
+    }
+    .seccion3 {
+      background: #222326;
+
+      h2 {
+        color: #ffffff;
+      }
+      P {
+        color: #ffffff;
+      }
+    }
+    footer {
+      #compartir_enid {
+        color: #ffffff;
+      }
+      i > img {
+        padding: 22px 20px 46px 0px;
+      }
+      #rightsid {
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        color: #ffffff;
+        line-height: 20px;
+        margin-bottom: 23px;
+      }
+    }
+    .linea_azul_footer {
+      display: none;
+    }
+  }
 }
