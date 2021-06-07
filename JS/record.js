@@ -6,7 +6,7 @@ const repetir = document.querySelector("#repeatShot");
 let recording = false;
 
 const uploadEndpoint =
-  "http://upload.giphy.com/v1/gifs?api_key=wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
+  "https://upload.giphy.com/v1/gifs?api_key=wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
 
 //show recorded gif
 function mostrarPreview({ id }) {
@@ -29,6 +29,9 @@ subir.addEventListener("click", function (ev) {
     username: actualPreviewId,
   });
   localStorage.setItem("misGifos", JSON.stringify(misGifos));
+  alert(
+    'Tu gifo se ha creado con exito, podras ver los gifos creados en la seccion de "MIS GIFOS"'
+  );
 });
 
 // fetch upload endpoint
@@ -79,7 +82,7 @@ function getStreamAndRecord() {
 
       const recorder = RecordRTC(stream, {
         type: "gif", // audio or video or gif or canvas
-        frameRate: 0.5,
+        frameRate: 1,
         quality: 10,
         width: 360,
         hidden: 240,

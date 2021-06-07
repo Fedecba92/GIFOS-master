@@ -5,6 +5,11 @@ const search = document.querySelector("#icon_buscador");
 const containerList = document.querySelector("#match_list");
 let searchResults = document.querySelector("#resultados_busqueda");
 let seccion2 = document.querySelector(".seccion2");
+const closeBttn = document.querySelector("#xbutton");
+let verMas = document.querySelector("#ver_mas");
+let h2SearchResults = document.querySelector("#titulo_busqueda");
+let matchList = document.querySelector("#match_list");
+const border_search = document.querySelector(".border_search");
 //--endpoint de los trending tags
 const trendingTagsEndpoint = "https://api.giphy.com/v1/trending/searches";
 const apiKey = "wUIs2kykDiUjqc9ljNRoH97ddpN05IwD";
@@ -40,6 +45,9 @@ const autocomplete = async (ev) => {
   if (ev.key == "Enter") return;
   ev.preventDefault();
   containerList.innerHTML = "";
+  border_search.style.height = "50px";
+  search.style.display='block'
+  closeBttn.style.display='none'
   if (ev.target.value.length >= 3) {
     const tags = await getSearchTags(ev.target.value);
     tags.data.map((tag) => {
@@ -49,9 +57,15 @@ const autocomplete = async (ev) => {
         "click",
         (e) => (searchInput.value = e.target.innerText)
       );
+      newLi.onclick = () => searchContent();
       containerList.appendChild(newLi);
+      
+      border_search.style.height = "340px";
+      search.style.display = "none";
+      closeBttn.style.display = "block";
     });
   }
+  
 };
 
 //getting input for search
@@ -59,9 +73,13 @@ const searchContent = async (search) => {
   let gifosSearch = "";
   if (typeof search != "undefined") {
     searchInput.value = search;
+    h2SearchResults.style.display = "block";
+    matchList.style.display = "block";
   }
 
   gifosSearch = await getGifosSearch(Paginacion, searchInput?.value);
+  h2SearchResults.style.display = "block";
+  matchList.style.display = "block";
 
   fetchSearch(gifosSearch);
 };
@@ -129,15 +147,29 @@ const fetchSearch = (arr, flagViemore = false) => {
             );
           e.children[0].children[0].onclick = (y) => addFav(y.target, SEARCH);
           containerList.innerHTML = "";
-          let verMas = document.querySelector("#ver_mas");
           verMas.style.visibility = "visible";
           verMas.addEventListener("click", viewMore);
+          border_search.style.height = "50px";
         },
         SEARCH
       );
     });
   }
 };
+
+// --- Vuelve los seteos del contenedor a la configuración inicial
+const cleanResultsContianer = () => {
+  searchResults.classList.add("hidden");
+  containerList.innerHTML = "";
+  border_search.style.height = "50px";
+  search.style.display='block'
+  closeBttn.style.display='none'
+  h2SearchResults.innerHTML=''
+  searchResults.innerHTML=''
+  verMas.style.visibility='hidden'
+  
+};
+
 
 //Trending TAGS
 
@@ -157,7 +189,11 @@ const displayTrendingTags = (trendingTags) => {
   for (let i = 0; i < 6; i++) {
     const trendingTagItem = document.createElement("span");
     trendingTagItem.classList.add("trending__item");
-    trendingTagItem.onclick = () => searchContent(trendingTags.data[i]);
+    trendingTagItem.onclick = () => {
+      searchContent(trendingTags.data[i]);
+      search.style.display = "none";
+      closeBttn.style.display = "block";
+    };
 
     trendingTagItem.innerHTML = `${trendingTags.data[i]}`;
     $trendingTagList.appendChild(trendingTagItem);
@@ -177,3 +213,5 @@ document
     e.preventDefault();
     searchContent();
   });
+
+closeBttn.onclick = () => cleanResultsContianer();
